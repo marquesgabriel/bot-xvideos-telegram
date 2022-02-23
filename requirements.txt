@@ -1,0 +1,5 @@
+requests
+bs4
+telegram
+bs4
+emoji
