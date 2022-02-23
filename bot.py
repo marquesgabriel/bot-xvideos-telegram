@@ -6,9 +6,10 @@ from bs4 import BeautifulSoup
 import emoji
 
 from xvideos import choose_random_porn_comment, choose_random_video
-load_dotenv()
 
-updater = Updater(token=os.getenv('BOT_TOKEN'), use_context=True)
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+
+updater = Updater(token=BOT_TOKEN, use_context=True)
 dispatcher = updater.dispatcher
 
 def formatMessage(message):
