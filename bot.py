@@ -18,7 +18,7 @@ def formatMessage(message):
 
 def meajuda(update: Update, ctx: CallbackContext):
   print("called help")
-  ctx.bot.send_message(chat_id=update.effective_chat.id, text='*Olá, Aqui estão os comandos:*\n \- `/mensagem` \- Procura um comentario aleatório no Xvideos em Portugês\n \- `/busca *termo*` \- Procura um video pelo termo passado, se não passado nenhum, é retornado um video aleatório\n \- `!meajuda` \- Mostra esta mensagem\.\n\n Encontrou algum problema ou tem alguma sugestão para o bot? Sinta\-se livre para nos enviar uma mensagem por este [link](https://github.com/marquesgabriel/bot-discord-comentarios-xvideos/issues)', parse_mode=ParseMode.MARKDOWN_V2)
+  ctx.bot.send_message(chat_id=update.effective_chat.id, text='*Olá, Aqui estão os comandos:*\n \- `/mensagem` \- Procura um comentario aleatório no Xvideos em Portugês\n \- `/busca *termo*` \- Procura um video pelo termo passado, se não passado nenhum, é retornado um video aleatório\n \- `!meajuda` \- Mostra esta mensagem\.\n\n Encontrou algum problema ou tem alguma sugestão para o bot? Sinta\-se livre para nos enviar uma mensagem por este [link](https://github.com/marquesgabriel/bot-xvideos-telegram/issues)', parse_mode=ParseMode.MARKDOWN_V2)
 
   # update.effective_message
 
