@@ -25,7 +25,7 @@ def meajuda(update: Update, ctx: CallbackContext):
   ctx.bot.delete_message(chat_id=update.effective_chat.id, message_id=update.message.message_id)
 
 def mensagem(update: Update, ctx: CallbackContext):
-    ctx.bot.send_message(chat_id=update.effective_chat.id, text='**Buscando\.\.\.\n**', parse_mode=ParseMode.MARKDOWN_V2)
+    sentMessage = ctx.bot.send_message(chat_id=update.effective_chat.id, text='**Buscando\.\.\.\n**', parse_mode=ParseMode.MARKDOWN_V2)
     try:
         author, comment, title, url = choose_random_porn_comment()
         author = '**O '+author+'  comentou o seguinte:**\n'
@@ -36,6 +36,7 @@ def mensagem(update: Update, ctx: CallbackContext):
     except Exception :
         ctx.bot.send_message(chat_id=update.effective_chat.id, text='Houve uma falha na busca. Tente novamente.')
     ctx.bot.delete_message(chat_id=update.effective_chat.id, message_id=update.message.message_id)
+    ctx.bot.delete_message(chat_id=update.effective_chat.id, message_id=sentMessage.message_id)
 
 
 def busca(update: Update, ctx: CallbackContext):
