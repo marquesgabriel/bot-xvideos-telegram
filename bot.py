@@ -1,6 +1,6 @@
 import os
-from telegram import ParseMode, Update
-from telegram.ext import CommandHandler, CallbackContext, Updater
+from telegram import Update
+from telegram.ext import CommandHandler, CallbackContext, Updater, ParseMode
 from bs4 import BeautifulSoup
 import emoji
 
