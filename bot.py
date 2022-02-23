@@ -1,5 +1,4 @@
 import os
-from dotenv import load_dotenv
 from telegram import ParseMode, Update
 from telegram.ext import CommandHandler, CallbackContext, Updater
 from bs4 import BeautifulSoup
@@ -18,7 +17,7 @@ def formatMessage(message):
   return emoji.emojize(workedMessage)
 
 def meajuda(update: Update, ctx: CallbackContext):
-
+  print("called help")
   ctx.bot.send_message(chat_id=update.effective_chat.id, text='*Olá, Aqui estão os comandos:*\n \- `/mensagem` \- Procura um comentario aleatório no Xvideos em Portugês\n \- `/busca *termo*` \- Procura um video pelo termo passado, se não passado nenhum, é retornado um video aleatório\n \- `!meajuda` \- Mostra esta mensagem\.\n\n Encontrou algum problema ou tem alguma sugestão para o bot? Sinta\-se livre para nos enviar uma mensagem por este [link](https://github.com/marquesgabriel/bot-discord-comentarios-xvideos/issues)', parse_mode=ParseMode.MARKDOWN_V2)
 
   # update.effective_message
@@ -26,6 +25,7 @@ def meajuda(update: Update, ctx: CallbackContext):
   ctx.bot.delete_message(chat_id=update.effective_chat.id, message_id=update.message.message_id)
 
 def mensagem(update: Update, ctx: CallbackContext):
+    print("called mensagem")
     sentMessage = ctx.bot.send_message(chat_id=update.effective_chat.id, text='**Buscando\.\.\.\n**', parse_mode=ParseMode.MARKDOWN_V2)
     try:
         author, comment, title, url = choose_random_porn_comment()
@@ -41,6 +41,7 @@ def mensagem(update: Update, ctx: CallbackContext):
 
 
 def busca(update: Update, ctx: CallbackContext):
+  print("called busca")
   # update.message.from.id
   try:
       term = '+'.join(update.message.text.replace("/busca ", ""))
@@ -62,3 +63,4 @@ dispatcher.add_handler(message_handler)
 dispatcher.add_handler(search_handler)
 
 updater.start_polling()
+print("Bot Online!")
